@@ -1,10 +1,11 @@
-from django.shortcuts import redirect
-
+from django.shortcuts import redirect, render
+#from django.urls import reverse
 from django.views.generic import TemplateView, FormView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Project
 from .forms import ProjectForm
+#from django.contrib import messages
 
 
 class ProjectCreate(LoginRequiredMixin, SuccessMessageMixin, FormView):
@@ -17,7 +18,7 @@ class ProjectCreate(LoginRequiredMixin, SuccessMessageMixin, FormView):
         return redirect("create")
 
 
-class PortfolioView(LoginRequiredMixin, TemplateView):
+class PortfolioView(TemplateView):
     template_name = "index.html"
     extra_context = {"proyectos": Project.objects.all()}
 
@@ -27,7 +28,13 @@ class PortfolioView(LoginRequiredMixin, TemplateView):
         return context
 
 
-class ProjectDetailView(LoginRequiredMixin, DetailView):
+class ProjectDetailView(DetailView):
     model = Project
     template_name = "portfolio-details.html"
     context_object_name = "proyecto"
+
+def rick_y_morty_View(request):
+    return render(request,'portfolio-rick.html')
+
+def fin_de_unidad_1_View(request):
+    return render(request,'portfolio-fin-de-unidad-1.html')
