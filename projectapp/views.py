@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-#from django.urls import reverse
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -12,11 +12,13 @@ class ProjectCreate(LoginRequiredMixin, SuccessMessageMixin, FormView):
     model = Project
     template_name = "create.html"
     form_class = ProjectForm
-
+    success_url = reverse_lazy('create')
+    
     def form_valid(self, form):
         Project.objects.create(**form.cleaned_data)
         return redirect("create")
-
+    
+    
 
 class PortfolioView(TemplateView):
     template_name = "index.html"

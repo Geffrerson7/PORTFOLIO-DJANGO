@@ -346,6 +346,18 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-python">
+            <div class="portfolio-wrap">
+              <img src="{% static 'assets/img/portfolio/portfolio-fin-de-unidad-1.png' %}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/portfolio-fin-de-unidad-1.png' %}"
+                  data-gallery="portfolioGallery" class="portfolio-lightbox" title="Proyecto Fin de Unidad 1"><i
+                    class="bx bx-plus"></i></a>
+                <a href="{% url 'fin-de-unidad-1' %}" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+          
           {% for proyecto in proyectos %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-{{ proyecto.tags }}">
             <div class="portfolio-wrap">
@@ -359,17 +371,7 @@
           </div>
           {% endfor %}
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-python">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-fin-de-unidad-1.png' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'assets/img/portfolio/portfolio-fin-de-unidad-1.png' %}"
-                  data-gallery="portfolioGallery" class="portfolio-lightbox" title="Proyecto Fin de Unidad 1"><i
-                    class="bx bx-plus"></i></a>
-                <a href="{% url 'fin-de-unidad-1' %}" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
 
