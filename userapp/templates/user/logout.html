@@ -1,23 +1,18 @@
 {% extends "../base.html" %} {% block content %}
 
 
-
 <div class="mt-5">
-    <div class="card" style="width: 30%; margin: auto">
+    <div class="card text-center" style="width: 30%; margin: auto">
         <div class="card-body">
-            <h2>Logged out!</h2>
-            <form method="post" novalidate>
-
-                <div class="row">
-                    <div class="col-12 d-grid mt-3" style="text-align: center">
-                        <a href="{% url 'login' %}" class="btn btn-primary mt-3">Click here to login again.</a>
-                    </div>
-                </div>
-            </form>
-
+            <h2 class="card-title">Logged out!</h2>
+                            
+            <div class="col-12 d-grid mt-3" style="text-align: center">
+                <a href="{% url 'login' %}" class="btn btn-primary mt-3">Click here to login again.</a>
+            </div>
+                       
         </div>
     </div>
 </div>
 
+
 {% endblock content %}
-</div>

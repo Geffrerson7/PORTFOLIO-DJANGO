@@ -7,15 +7,15 @@ from .models import Project
 from .forms import ProjectForm
 
 
-class ProjectCreate(LoginRequiredMixin,SuccessMessageMixin, FormView):
+class ProjectCreate(LoginRequiredMixin, SuccessMessageMixin, FormView):
     model = Project
     template_name = "create.html"
     form_class = ProjectForm
-    success_message = "Se ha registrado tu proyecto correctamente"
 
     def form_valid(self, form):
         Project.objects.create(**form.cleaned_data)
-        return redirect("index")
+        return redirect("create")
+
 
 class PortfolioView(LoginRequiredMixin, TemplateView):
     template_name = "index.html"
@@ -26,7 +26,8 @@ class PortfolioView(LoginRequiredMixin, TemplateView):
         context["proyectos"] = Project.objects.all()
         return context
 
-class ProjectDetailView(LoginRequiredMixin,DetailView):
-    model=Project
-    template_name='portfolio-details.html'
-    context_object_name="proyecto"
+
+class ProjectDetailView(LoginRequiredMixin, DetailView):
+    model = Project
+    template_name = "portfolio-details.html"
+    context_object_name = "proyecto"
