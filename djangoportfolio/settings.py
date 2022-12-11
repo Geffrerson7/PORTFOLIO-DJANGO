@@ -29,7 +29,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['proyectou4-production-37e6.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
