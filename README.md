@@ -4,7 +4,7 @@
 Es un portafolio donde puedes ver agregar tus proyectos creados.
 
 ## Autor
-- Gefferson Max Casasola Huamancusi ([Geffrerson7](https://www.github.com/Geffrerson7))
+- [Gefferson Max Casasola Huamancusi](https://www.github.com/Geffrerson7)
 
 ## Setup
 
