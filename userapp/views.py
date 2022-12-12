@@ -6,7 +6,9 @@ from django.contrib.auth.models import User
 from .forms import NewUserForm
 from django.views.generic import CreateView
 from django.contrib import messages
+
 # Create your views here.
+
 
 class RegisterUser(CreateView):
     template_name = "user/register.html"

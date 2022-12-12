@@ -4,8 +4,13 @@
     <div class="card" style="width: 30%; margin: auto">
       <div class="card-body">
         <h2>Login</h2>
-              
+        {% if form.errors %}
+    
+        <div class="alert alert-danger" role="alert">
+          Your username and password didn't match. Please try again.
+        </div>
         
+        {% endif %}
         <form method="post" novalidate>
           {% csrf_token %}
           <div class="row">
