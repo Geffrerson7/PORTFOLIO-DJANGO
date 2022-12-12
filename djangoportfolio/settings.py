@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 ]
 
+CSRF_TRUSTED_ORIGINS=['https://proyectou4-production-37e6.up.railway.app']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
