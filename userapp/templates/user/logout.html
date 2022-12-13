@@ -1,18 +1,21 @@
-{% extends "../base.html" %} {% block content %}
 
+{% extends "../base.html" %} 
+{% load static %} 
+{% block content %}
 
 <div class="mt-5">
-    <div class="card text-center" style="width: 30%; margin: auto">
+    <div class="card" style="width: 30%; margin: auto">
         <div class="card-body">
-            <h2 class="card-title">Logged out!</h2>
-                            
-            <div class="col-12 d-grid mt-3" style="text-align: center">
-                <a href="{% url 'login' %}" class="btn btn-primary mt-3">Click here to login again.</a>
+            <img src="{% static 'assets/img/perrito_informatico.png' %}" class="card-img-top" alt="">
+            <p class="text-center">Thanks for your visit!</p>
+            <div class="col-12 d-grid mt-3">
+                <a href="{% url 'index' %}" class="btn btn-primary">Go to my portfolio</a>
+                           
             </div>
-                       
+            <div class="col-12 d-grid mt-3">
+                <a href="{% url 'login' %}" class="btn btn-primary">Click here to login again.</a>
+            </div>
         </div>
     </div>
 </div>
-
-
 {% endblock content %}

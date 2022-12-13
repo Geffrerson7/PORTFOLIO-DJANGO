@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Portfolio - Index</title>
+  <title>Portfolio - Gefferson Casasola</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -70,9 +70,10 @@
 
           <li><a href="{% url 'create' %}" class="nav-link scrollto"><i class="bx bx-book-add"></i> <span>Create
                 Project</span></a></li>
-
+          {% if request.user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
                 out</span></a></li>
+          {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -126,7 +127,7 @@
                 </ul>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -283,14 +284,14 @@
             <div class="resume-item">
               <h4>Graduated of electronic engineering</h4>
               <h5>2013 - 2020</h5>
-              <p><em>National university of Engineering</em></p>
+              <p><em>National University of Engineering</em></p>
               <p>My responsibility is the planning, preparation and execution of projects and works in the various
                 stages of installation, operation, generation, transmission, transformation, distribution, use,
                 maintenance and energy development in the country. Likewise, it is in charge of the studies, projects,
                 designs and execution of works of industrial, residential and public lighting electrical installations.
               </p>
             </div>
-            
+
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Professional Experience</h3>
@@ -306,7 +307,7 @@
                 <li>Django Rest Framework</li>
               </ol>
             </div>
-            
+
           </div>
         </div>
 
@@ -357,7 +358,7 @@
               </div>
             </div>
           </div>
-          
+
           {% for proyecto in proyectos %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-{{ proyecto.tags }}">
             <div class="portfolio-wrap">
@@ -366,12 +367,13 @@
                 <a href="{{ proyecto.url_image }}" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="{{ proyecto.title }}"><i class="bx bx-plus"></i></a>
                 <a href="{% url 'detail' proyecto.id %}" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="{% url 'delete' proyecto.id %}" title="Delete Project"><i class="bx bx-task-x"></i></a>
               </div>
             </div>
           </div>
           {% endfor %}
 
-          
+
         </div>
 
 

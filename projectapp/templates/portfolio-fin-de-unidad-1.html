@@ -52,10 +52,13 @@
                 <h1 class="text-light"><a href="{% url 'index' %}">Gefferson Casasola</a></h1>
                 <div class="social-links mt-3 text-center">
                     <a href="https://twitter.com/GHuamancusi" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.facebook.com/gefferson.casasola" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://www.instagram.com/gefferson.casasola/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.facebook.com/gefferson.casasola" class="facebook"><i
+                            class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/gefferson.casasola/" class="instagram"><i
+                            class="bx bxl-instagram"></i></a>
                     <a href="https://github.com/Geffrerson7" class="github"><i class="bx bxl-github"></i></a>
-                    <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i
+                            class="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
@@ -66,8 +69,10 @@
                                 <span>Home</span></a></li>
                         <li><a href="{% url 'create' %}" class="nav-link scrollto"><i class="bx bx-book-add"></i>
                                 <span>Create Project</span></a></li>
+                        {% if request.user.is_authenticated %}
                         <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i>
                                 <span>Log out</span></a></li>
+                        {% endif %}
                     </ul>
                 </ul>
             </nav><!-- .nav-menu -->
@@ -123,7 +128,9 @@
                             <h3>Project information</h3>
                             <ul>
                                 <li><strong>Title</strong>: Proyecto Fin de Unidad 1</li>
-                                <li><strong>Author</strong>: <a href="https://github.com/Raisa320">Raisa Orellana</a> , <a href="https://github.com/Geffrerson7">Gefferson Casasola</a> and <a href="https://github.com/JaquelineRocio">Jaqueline Ramos</a></li>
+                                <li><strong>Author</strong>: <a href="https://github.com/Raisa320">Raisa Orellana</a> ,
+                                    <a href="https://github.com/Geffrerson7">Gefferson Casasola</a> and <a
+                                        href="https://github.com/JaquelineRocio">Jaqueline Ramos</a></li>
                                 <li><strong>Tags</strong>: python</li>
                                 <li><strong>Project URL</strong>: <a
                                         href="https://github.com/Geffrerson7/Trabajo-de-fin-de-Unidad">GitHub</a>
@@ -165,18 +172,18 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}""></script>
-  <script src="{% static 'assets/vendor/aos/aos.js' %}""></script>
-  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}""></script>
-  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}""></script>
-  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}""></script>
-  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}""></script>
-  <script src="{% static 'assets/vendor/typed.js/typed.min.js' %}""></script>
-  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}""></script>
-  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}""></script>
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}""></script>
+  <script src=" {% static 'assets/vendor/aos/aos.js' %}""></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}""></script>
+  <script src=" {% static 'assets/vendor/glightbox/js/glightbox.min.js' %}""></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}""></script>
+  <script src=" {% static 'assets/vendor/swiper/swiper-bundle.min.js' %}""></script>
+    <script src="{% static 'assets/vendor/typed.js/typed.min.js' %}""></script>
+  <script src=" {% static 'assets/vendor/waypoints/noframework.waypoints.js' %}""></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}""></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'assets/js/main.js' %}""></script>
+  <script src=" {% static 'assets/js/main.js' %}""></script>
 
 </body>
 

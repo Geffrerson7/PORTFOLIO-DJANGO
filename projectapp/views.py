@@ -1,8 +1,7 @@
 from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, DetailView
+from django.views.generic import TemplateView, FormView, DetailView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.decorators import login_required
 from .models import Project
 from .forms import ProjectForm
 from django.contrib import messages
@@ -14,11 +13,8 @@ class ProjectCreate(LoginRequiredMixin, FormView):
     form_class = ProjectForm
 
     def form_valid(self, form):
-        if form.is_valid():
-            Project.objects.create(**form.cleaned_data)
-            messages.success(self.request, "Project created")
-        else:
-            messages.error(self.request, "Error creating project")
+        Project.objects.create(**form.cleaned_data)
+        messages.success(self.request, "Project created")
         return redirect("create")
 
 
@@ -36,6 +32,13 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = "portfolio-details.html"
     context_object_name = "proyecto"
+
+
+@login_required
+def deleteProject(request, id):
+    project = Project.objects.get(id=id)
+    project.delete()
+    return redirect("index")
 
 
 def rick_y_morty_View(request):
