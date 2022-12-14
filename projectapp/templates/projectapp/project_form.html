@@ -64,8 +64,6 @@
         <ul>
           <li><a href="{% url 'index' %}" class="nav-link scrollto"><i class="bx bx-home"></i>
               <span>Home</span></a></li>
-          <li><a href="{% url 'create' %}" class="nav-link scrollto"><i class="bx bx-book-add"></i> <span>Create Project</span></a></li>
-
           <li><a href="{% url 'update' project.id %}" class="nav-link scrollto active"><i class="bx bx-edit"></i> <span>Update
                 Project</span></a></li>
           {% if request.user.is_authenticated %}
