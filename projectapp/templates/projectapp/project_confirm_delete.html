@@ -1,0 +1,26 @@
+
+{% extends "../base.html" %} 
+{% load static %} 
+{% block content %}
+
+
+<div class="mt-5">
+    <div class="card" style="width: 30%; margin: auto">
+        <div class="card-body">
+            
+            <form method="post">{% csrf_token %}    
+                <img src="{% static 'assets/img/perrito_informatico.png' %}" class="card-img-top" alt="">
+                <p class="text-center">Are you sure you want to delete {{project.title}}?</p>
+                <div class="col-12 d-grid mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        Confirm
+                    </button>
+                </div>           
+                <div class="col-12 d-grid mt-3">
+                    <a href="{% url 'index' %}" class="btn btn-primary">No</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
