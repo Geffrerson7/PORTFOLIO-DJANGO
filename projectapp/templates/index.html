@@ -367,8 +367,10 @@
                 <a href="{{ proyecto.url_image }}" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="{{ proyecto.title }}"><i class="bx bx-plus"></i></a>
                 <a href="{% url 'detail' proyecto.id %}" title="More Details"><i class="bx bx-link"></i></a>
+                {% if request.user.is_authenticated %}
                 <a href="{% url 'update' proyecto.id %}" title="Update Project"><i class="bx bx-edit-alt"></i></a>
                 <a href="{% url 'delete' proyecto.id %}" title="Delete Project"><i class="bx bx-task-x"></i></a>
+                {% endif %}
               </div>
             </div>
           </div>

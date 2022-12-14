@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.generic import TemplateView, FormView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.messages.views import SuccessMessageMixin
 from .models import Project
 from .forms import ProjectForm
 from django.contrib import messages
@@ -29,7 +28,7 @@ class ProjectDetailView(DetailView):
     model = Project
     context_object_name = "proyecto"
 
-class ProjectUpdateView(LoginRequiredMixin,SuccessMessageMixin,UpdateView):
+class ProjectUpdateView(LoginRequiredMixin,UpdateView):
     model = Project
     fields = ["title", "description", "url_image", "url_github", "tags"]
     success_url ="/"
