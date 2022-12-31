@@ -59,6 +59,7 @@
                     <a href="https://github.com/Geffrerson7" class="github"><i class="bx bxl-github"></i></a>
                     <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i
                             class="bx bxl-linkedin"></i></a>
+                    
                 </div>
             </div>
 
@@ -70,8 +71,8 @@
                         <li><a href="{% url 'create' %}" class="nav-link scrollto"><i class="bx bx-book-add"></i>
                                 <span>Create Project</span></a></li>
                         {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i>
-                                <span>Log out</span></a></li>
+                        <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
+                                      out</span></a></li>
                         {% endif %}
                     </ul>
                 </ul>
@@ -139,18 +140,20 @@
                         <div class="portfolio-description">
                             <h2>Description</h2>
                             <p>
-                                Es una aplicación que extrae los datos de los personajes de la API "Rick and Morty", los
-                                almacena en la colección "personajes" de la base de datos "rick_y_morty" y los muestra
-                                ordenados por el id de forma descendente en la ruta raiz en grupos de 20 por cada
-                                página, en un total de 42 páginas.
+                                Es una aplicación que muestra los datos de los personajes de la API <a
+                                    href="https://rickandmortyapi.com/api/character">Rick and Morty</a>
+                                tales como nombre, estado, especie, genero, origen, última ubicación conocida y primer
+                                episodio y los muestra
+                                ordenados por el id de forma descendente en grupos de 20 por cada
+                                página, en un total de 42 páginas.</p>
 
-                                También extrae los datos de los capítulos, los almacena en la colección "episodios" y
-                                muestra los datos de los personajes que aparecen en dicho capitulo en la ruta dinámica
-                                "capitulo/id".
+                            <p>También muestra los datos de los personajes que aparecen en un capítulo determinado a
+                                través de la ruta dinámica
+                                "capitulo/id" donde "id" es el id del capítulo.</p>
 
-                                En ambos casos, se puede acceder a mas datos de la personaje haciendo click en su
-                                nombre.
-                            </p>
+                            <p>En ambos casos, se puede acceder a mas datos de la personaje haciendo click en su
+                                nombre.</p>
+
                         </div>
                     </div>
 

@@ -56,6 +56,7 @@
           <a href="https://www.instagram.com/gefferson.casasola/" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="https://github.com/Geffrerson7" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          
         </div>
       </div>
 
@@ -67,12 +68,12 @@
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
               <span>Portfolio</span></a></li>
-
+              <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
           <li><a href="{% url 'create' %}" class="nav-link scrollto"><i class="bx bx-book-add"></i> <span>Create
                 Project</span></a></li>
           {% if request.user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
-                out</span></a></li>
+                      out</span></a></li>
           {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
@@ -111,7 +112,7 @@
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>6 July 1993</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.codemy.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.codegef.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+51 952253272</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lima, Peru</span></li>
                 </ul>
@@ -359,6 +360,18 @@
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-django">
+            <div class="portfolio-wrap">
+              <img src="{% static 'assets/img/portfolio/api-payments-1.png' %}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/portfolio/api-payments-1.png' %}"
+                  data-gallery="portfolioGallery" class="portfolio-lightbox" title="API Payments"><i
+                    class="bx bx-plus"></i></a>
+                <a href="{% url 'apipayments' %}" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
           {% for proyecto in proyectos %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-{{ proyecto.tags }}">
             <div class="portfolio-wrap">
@@ -460,20 +473,21 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <!-- <footer id="footer">
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>iPortfolio</span></strong>
       </div>
-      <div class="credits">
+      <div class="credits"> -->
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer> -->
+  <!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>

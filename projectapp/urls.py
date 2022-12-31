@@ -7,6 +7,7 @@ from .views import (
     ProjectDeleteView,
     rick_y_morty_View,
     fin_de_unidad_1_View,
+    apiPayments,
 )
 
 urlpatterns = [
@@ -17,4 +18,5 @@ urlpatterns = [
     path('<int:pk>/update/', ProjectUpdateView.as_view(), name='update'), 
     path("detail/rick-y-morty/", rick_y_morty_View, name="rick-y-morty"),
     path("detail/fin-de-unidad-1/", fin_de_unidad_1_View, name="fin-de-unidad-1"),
+    path("detail/apipayments/", apiPayments, name="apipayments"),
 ]

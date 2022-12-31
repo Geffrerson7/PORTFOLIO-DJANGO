@@ -56,6 +56,7 @@
           <a href="https://www.instagram.com/gefferson.casasola/" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="https://github.com/Geffrerson7" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          
         </div>
       </div>
 
@@ -67,7 +68,7 @@
                 Project</span></a></li>
           {% if request.user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
-                out</span></a></li>
+                      out</span></a></li>
           {% endif %}
         </ul>
       </nav><!-- .nav-menu -->

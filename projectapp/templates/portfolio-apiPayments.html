@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Portfolio - Fin de Unidad 1</title>
+    <title>Portfolio - API Payments</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -74,6 +74,7 @@
                         <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
                                       out</span></a></li>
                         {% endif %}
+                        
                     </ul>
                 </ul>
             </nav><!-- .nav-menu -->
@@ -87,10 +88,10 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>Fin de Unidad - Details</h2>
+                    <h2>API Payments - Details</h2>
                     <ol>
                         <li><a href="{% url 'index' %}">Home</a></li>
-                        <li><a href="{% url 'fin-de-unidad-1' %}">Fin de Unidad - Details</a></li>
+                        <li><a href="{% url 'apipayments' %}">Fin de Unidad - Details</a></li>
                     </ol>
                 </div>
 
@@ -108,15 +109,23 @@
                             <div class="swiper-wrapper align-items-center">
 
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/img/portfolio/fin-de-unidad-1.png' %}" alt="">
+                                    <img src="{% static 'assets/img/portfolio/api-payments-1.png' %}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/img/portfolio/fin-de-unidad-2.png' %}" alt="">
+                                    <img src="{% static 'assets/img/portfolio/api-payments-2.png' %}" alt="">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/img/portfolio/fin-de-unidad-3.png' %}" alt="">
+                                    <img src="{% static 'assets/img/portfolio/api-payments-3.png' %}" alt="">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="{% static 'assets/img/portfolio/api-payments-4.png' %}" alt="">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="{% static 'assets/img/portfolio/api-payments-5.png' %}" alt="">
                                 </div>
 
                             </div>
@@ -128,53 +137,23 @@
                         <div class="portfolio-info">
                             <h3>Project information</h3>
                             <ul>
-                                <li><strong>Title</strong>: Proyecto Fin de Unidad 1</li>
-                                <li><strong>Author</strong>: <a href="https://github.com/Raisa320">Raisa Orellana</a> ,
-                                    <a href="https://github.com/Geffrerson7">Gefferson Casasola</a> and <a
-                                        href="https://github.com/JaquelineRocio">Jaqueline Ramos</a>
-                                </li>
-                                <li><strong>Tags</strong>: python</li>
+                                <li><strong>Title</strong>: API de pagos de servicios - fullstack</li>
+                                <li><strong>Author</strong>: <a href="https://github.com/Geffrerson7">Gefferson
+                                        Casasola</a></li>
+                                <li><strong>Tags</strong>: Django</li>
                                 <li><strong>Project URL</strong>: <a
-                                        href="https://github.com/Geffrerson7/Trabajo-de-fin-de-Unidad">GitHub</a>
+                                        href="https://github.com/Geffrerson7/front-api-payments">GitHub</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="portfolio-description">
                             <h2>Description</h2>
-                            <p>PARTE 1:</p>
-
-                            <p>Es un programa que permite registrar, buscar y descargar datos de libros, tales como
-                                título, género, ISBN, editorial y autor(es) por línea de comando.
-                                Tiene un menú con las siguientes opciones:</p>
-                            <ol>
-                                <li>Leer archivo de disco duro (.txt o csv) que cargue 3 libros.</li>
-                                <li>Listar libros.</li>
-                                <li>Agregar libro.</li>
-                                <li>Eliminar libro.</li>
-                                <li>Buscar libro por ISBN o por título.</li>
-                                <li>Ordenar libros por título.</li>
-                                <li>Buscar libros por autor, editorial o género.</li>
-                                <li>Buscar libros por número de autores.</li>
-                                <li>Editar o actualizar datos de un libro (título, género, ISBN, editorial y
-                                    autores).</li>
-                                <li>Guardar libros en archivo de disco duro (.txt o csv).</li>
-                                <br>
-                            </ol>
-
-                            <p>PARTE 2:</p>
-
-                            <p>Es un programa que permite buscar datos de la <a
-                                    href="https://pokeapi.co/docs/v2">PokeAPI</a> tales como nombre, habilidad y URL de
-                                la imagen de los pokemons por línea de comando.
-                                Tiene un menú con las siguientes opciones:</p>
-                            <ol>
-                                <li>Listar pokemons por generación.</li>
-                                <li>Listar pokemons por forma.</li>
-                                <li>Listar pokemons por habilidad.</li>
-                                <li>Listar pokemons por habitat.</li>
-                                <li>Listar pokemons por tipo.</li>
-                            </ol>
-
+                            <p>
+                                Es una aplicación que tiene las funcionalidades de añadir pagos de servicios de
+                                streaming siempre y cuando el usuario esté logueado. Si el pago
+                                se hace después de la fecha de vencimiento se genera un registro de pago vencido. Si el
+                                usuario es admin, puede crear o modificar algún servicio. Todos los registros se guardan en una API creada con Django Rest Framework.
+                            </p>
                         </div>
                     </div>
 

@@ -57,6 +57,7 @@
           <a href="https://www.instagram.com/gefferson.casasola/" class="instagram"><i class="bx bxl-instagram"></i></a>
           <a href="https://github.com/Geffrerson7" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/gefferson-casasola/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
         </div>
       </div>
 
@@ -66,9 +67,10 @@
               <span>Home</span></a></li>
           <li><a href="{% url 'create' %}" class="nav-link scrollto active"><i class="bx bx-book-add"></i> <span>Create
                 Project</span></a></li>
-
+          {% if request.user.is_authenticated %}
           <li><a href="{% url 'logout' %}" class="nav-link scrollto"><i class="bx bx-log-out-circle"></i> <span>Log
                 out</span></a></li>
+          {% endif %}
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -93,13 +95,7 @@
 
     <section class="inner-page">
       <div class="container">
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-dismissible alert-{{ message.tags }}" role="alert">
-          {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
+
         {% load crispy_forms_tags %}
 
         <form method="post" class="my-class">
@@ -107,7 +103,10 @@
 
           <div class="my-3">
           </div>
-          <div class="text-center"><button class="btn btn-success">Create project</button></div>
+          <div class="text-center">
+            <button class="btn btn-primary">Create project</button>
+            <a href="{% url 'index' %}" class="btn btn-danger">Cancel</a>
+          </div>
 
         </form>
 
@@ -148,7 +147,22 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
-
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if messages %}
+  {% for message in messages %}
+  <script>
+    Swal.fire(
+      'Created!',
+      "{{ message }}",
+      'success'
+    ).then((result) => {
+      if (result.isConfirmed) {
+          window.location.href="{% url 'index' %}";
+      }
+    })
+  </script>
+  {% endfor %}
+  {% endif %}
 </body>
 
 </html>

@@ -4,6 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Project
 from .forms import ProjectForm
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 
 class ProjectCreate(LoginRequiredMixin, FormView):
     model = Project
@@ -12,7 +14,7 @@ class ProjectCreate(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         Project.objects.create(**form.cleaned_data)
-        messages.success(self.request, "Project created")
+        messages.success(self.request, "Project created successfully")
         return redirect("create")
 
 class PortfolioView(TemplateView):
@@ -28,10 +30,12 @@ class ProjectDetailView(DetailView):
     model = Project
     context_object_name = "proyecto"
 
-class ProjectUpdateView(LoginRequiredMixin,UpdateView):
+class ProjectUpdateView(SuccessMessageMixin,LoginRequiredMixin,UpdateView):
     model = Project
     fields = ["title", "description", "url_image", "url_github", "tags"]
-    success_url ="/"
+    success_message="Project updated successfully"
+    def get_success_url(self):
+        return reverse_lazy('update', kwargs={'pk': self.object.pk})
 
 class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     model = Project
@@ -42,3 +46,6 @@ def rick_y_morty_View(request):
 
 def fin_de_unidad_1_View(request):
     return render(request, "portfolio-fin-de-unidad-1.html")
+
+def apiPayments(request):
+    return render(request,"portfolio-apiPayments.html")
