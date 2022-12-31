@@ -1,7 +1,7 @@
 # Django-Portafolio
 
 ## Descripción
-Es un portafolio donde puedes ver agregar tus proyectos creados.
+Es un portafolio donde puedes ver y agregar tus proyectos creados.
 
 ## Autor
 - [Gefferson Max Casasola Huamancusi](https://www.github.com/Geffrerson7)
