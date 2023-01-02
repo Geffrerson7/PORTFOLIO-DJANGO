@@ -1102,3 +1102,21 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+.icons-container {
+	margin-top: 3rem;
+}
+
+.icons-container img {
+	width: 50px;
+	margin-right: 0.625rem;
+	margin-bottom: 0.75rem;
+}
+
+.skill section-bg .skill-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}

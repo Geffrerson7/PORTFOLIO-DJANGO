@@ -9,7 +9,7 @@
         <div class="card-body">
             
             <form method="post">{% csrf_token %}    
-                <img src="{% static 'assets/img/perrito_informatico.png' %}" class="card-img-top" alt="">
+                <img src="{{ project.url_image }}" class="card-img-top" alt="">
                 <p class="text-center">Are you sure you want to delete {{project.title}}?</p>
                 <div class="col-12 d-grid mt-3">
                     <button type="submit" class="btn btn-primary">
