@@ -1,16 +1,26 @@
 {% extends "../base.html" %} {% block content %}
-<div class="col-md-6" style="text-align: left">
-  <a href="{% url 'login' %}" class="btn btn-primary mt-3">Back</a>
-</div>
+
 <div class="mt-5">
   <div class="card" style="width: 50%; margin: auto">
     <div class="card-body">
       <h2>Register</h2>
-      
+      {% if form.errors %}
+      <div class="alert alert-danger">
+        Please correct the following error(s):
+        <ul>
+          {% for field in form %}
+          {% for error in field.errors %}
+          <li>{{field.name}} : {{ error }}</li>
+          {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %} con sweet alert
       <form method="post" novalidate>
         {% csrf_token %} {{ form.as_p }}
-        <div class="d-grid">
+        <div class="d-grid gap-3">
           <button type="submit" class="btn btn-primary">Crear Usuario</button>
+          <a href="{% url 'login' %}" class="btn btn-danger">Regresar</a>
         </div>
       </form>
     </div>
@@ -22,19 +32,36 @@
   inputs.forEach((input) => input.classList.add("form-control"));
 </script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  {% if messages %}
-  {% for message in messages %}
-  <script>
-    Swal.fire(
-      'Created!',
-      "{{ message }}",
-      'success'
-    ).then((result) => {
-      if (result.isConfirmed) {
-          window.location.href="{% url 'login' %}";
-      }
-    })
-  </script>
-  {% endfor %}
-  {% endif %}
+{% if messages %}
+{% for message in messages %}
+<script>
+  Swal.fire(
+    'Created!',
+    "{{ message }}",
+    'success'
+  ).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = "{% url 'login' %}";
+    }
+  })
+</script>
+
+{% endfor %}
+{% endif %}
+
+{% if form.errors %}
+{% for field in form %}
+{% for error in field.errors %}
+<script>
+  Swal.fire({
+    title: "Error",
+    text: "{{field.name}} : {{ error }}",
+    icon: "error",
+  });
+</script>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+
 {% endblock content %}

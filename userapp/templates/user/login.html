@@ -1,16 +1,10 @@
 {% extends "../base.html" %} {% block content %}
 
-<div class="mt-5">
-    <div class="card" style="width: 30%; margin: auto">
+  <div class="mt-5">
+    <div class="card shadow-lg" style="width: 30%; margin: auto">
       <div class="card-body">
         <h2>Login</h2>
-        {% if form.errors %}
-    
-        <div class="alert alert-danger" role="alert">
-          Your username and password didn't match. Please try again.
-        </div>
         
-        {% endif %}
         <form method="post" novalidate>
           {% csrf_token %}
           <div class="row">
@@ -34,6 +28,15 @@
       </div>
     </div>
   </div>
-
-  {% endblock content %}
-</div>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  {% if form.errors %}
+    <script>
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "¡Correo o contraseña no válidos!",
+    });
+    </script>                
+  {% endif %}
+ 
+{% endblock content %}

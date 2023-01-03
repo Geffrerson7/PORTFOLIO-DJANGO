@@ -1,8 +1,16 @@
 from django.db import models
-from django.urls  import reverse
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models.fields import CharField, URLField
 
+
+def validate_url(value):
+    url_validator = URLValidator()
+    try:
+        url_validator(value)
+    except ValidationError:
+        raise ValidationError("Invalid URL for this field")
 
 class Project(models.Model):
     class tagsOption(models.TextChoices):
@@ -17,15 +25,15 @@ class Project(models.Model):
     )
     title = CharField(max_length=200)
     description = models.TextField()
-    url_image = URLField(blank=True)
-    url_github = URLField(blank=True)
+    url_image = URLField(validators=[validate_url])
+    url_github = URLField(validators=[validate_url])
     
 
     def __str__(self) -> str:
         return self.title
 
-    def get_absolute_url(self):
-        return reverse("detail", kwargs={"pk": self.pk})
+    # def get_absolute_url(self):
+    #     return reverse("detail", kwargs={"pk": self.pk})
 
     
 
