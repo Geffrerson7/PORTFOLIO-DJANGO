@@ -15,7 +15,7 @@
           {% endfor %}
         </ul>
       </div>
-      {% endif %} con sweet alert
+      {% endif %}
       <form method="post" novalidate>
         {% csrf_token %} {{ form.as_p }}
         <div class="d-grid gap-3">
@@ -49,19 +49,27 @@
 {% endfor %}
 {% endif %}
 
-{% if form.errors %}
-{% for field in form %}
-{% for error in field.errors %}
-<script>
-  Swal.fire({
-    title: "Error",
-    text: "{{field.name}} : {{ error }}",
-    icon: "error",
-  });
-</script>
-{% endfor %}
-{% endfor %}
-{% endif %}
+<!-- <script>
 
+  {% if form.errors %}
+  var errors = '';
+  {% for field in form %}
+
+  {% for error in field.errors %}
+
+  errors += '{{field.name}}: {{error}}||';
+
+  {% endfor %}
+
+  {% endfor %}
+
+  Swal.fire({
+    title: 'Error!',
+    text: errors,
+    icon: 'error',
+  })
+  {% endif %}
+
+</script> -->
 
 {% endblock content %}
