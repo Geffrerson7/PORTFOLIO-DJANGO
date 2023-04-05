@@ -3,35 +3,33 @@
 ## Descripción
 Es un portafolio donde puedes ver y agregar tus proyectos creados.
 
-## Autor
-- [Gefferson Max Casasola Huamancusi](https://www.github.com/Geffrerson7)
+## Instalación local de la aplicación
 
-## Setup
-
-Crear un entorno virtual y lo activamos:
+Crear un entorno virtual
 
 ```sh
 $ virtualenv venv
+```
+
+Activar el entorno virtual
+```sh
 # windows
 $ source venv/Scripts/activate
 # Linux
 $ source venv/bin/activate
 ```
 
-Luego instalar las librerias:
+Instalar las librerias:
 
 ```sh
 (env)$ pip install -r requirements.txt
 ```
 
-Luego ejecutamos las migraciones para crear la base de datos de nuesta aplicacion, todo dentro de nuestro entorno virtual
+Hacer las migraciones
 ```sh
 # De manera general
 (env) $ python manage.py makemigrations
 (env) $ python manage.py migrate
-# Para nuestro proyecto
-(env) $ python manage.py makemigrations djangoportfolio
-(env) $ python manage.py migrate djangoportfolio
 ```
 
 Una vez concluido, procedemos a iniciar la app
@@ -39,4 +37,15 @@ Una vez concluido, procedemos a iniciar la app
 ```sh
 (env)$ python manage.py runserver
 ```
-Y navegue hasta `http://127.0.0.1:8000/`
+Y navegue hasta 
+```sh
+http://127.0.0.1:8000/
+```
+
+## Demo
+Para el despliegue del proyecto se utilizó Render y PostgreSQL.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://django-portfolio-4771.onrender.com)
+
+## Autor
+- [Gefferson Max Casasola Huamancusi](https://www.github.com/Geffrerson7)
