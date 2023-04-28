@@ -1,9 +1,20 @@
 # Django-Portafolio
 
 ## Descripción
-Es un portafolio donde puedes ver y agregar tus proyectos creados.
+Es un portafolio donde puedes ver y agregar tus proyectos de programación.
 
 ## Instalación local de la aplicación
+
+Clonar el proyecto
+
+```sh
+$ git clone https://github.com/Geffrerson7/PORTFOLIO-DJANGO
+```
+Ir a la carpeta 
+
+```sh
+$ cd PORTFOLIO-DJANGO
+```
 
 Crear un entorno virtual
 
