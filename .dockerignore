@@ -1,0 +1,13 @@
+# archivos de compilación
+*.pyc
+
+# directorios de entornos virtuales
+venv/
+
+# directorios de configuración local
+local/
+logs/
+
+.venv
+.git
+.gitignore

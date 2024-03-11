@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15.2-bullseye
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+
+  web:
+    build: .
+    command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - ./.env
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

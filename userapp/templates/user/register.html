@@ -1,6 +1,6 @@
 {% extends "../base.html" %} {% block content %}
 
-<div class="mt-5">
+<div class="mt-5 mb-5">
   <div class="card" style="width: 50%; margin: auto">
     <div class="card-body">
       <h2>Register</h2>
@@ -48,28 +48,5 @@
 
 {% endfor %}
 {% endif %}
-
-<!-- <script>
-
-  {% if form.errors %}
-  var errors = '';
-  {% for field in form %}
-
-  {% for error in field.errors %}
-
-  errors += '{{field.name}}: {{error}}||';
-
-  {% endfor %}
-
-  {% endfor %}
-
-  Swal.fire({
-    title: 'Error!',
-    text: errors,
-    icon: 'error',
-  })
-  {% endif %}
-
-</script> -->
 
 {% endblock content %}
